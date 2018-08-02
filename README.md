@@ -11,7 +11,7 @@ the total dollar amount sent).
 ## CLI, Running, and Requirements
 For the purposes of simplicity, `app.py` contains a Command Line Interface to process the file. It takes a single 
 argument of `--file_path` which is the relative path to the file to run against. For example, the file 
-`corrupt.txt` could be processed by running `python app.py examples/corrupt.txt`. 
+`corrupt.txt` could be processed by running `python app.py --file_path examples/corrupt.txt`. 
  
 This process is written using Python 3.6 and contains python requirements in `requirements.txt` which can 
 be installed using [pip](https://pypi.org/project/pip/). 
