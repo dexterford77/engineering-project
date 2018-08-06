@@ -34,6 +34,5 @@ total ACH amount of ${summed_lines} to the bank on {todays_date}.
 def get_num_of_commissions(path):
     with path.open() as f:
         commission_lines = list(f)
-    num_of_commissions = commission_lines[-1][18:21]
-    num_of_commissions.lstrip('0')
+    num_of_commissions = int(commission_lines[-1][18:21])
     return num_of_commissions
