@@ -27,7 +27,7 @@ class TestUtils(unittest.TestCase):
     # it returns a string
     self.assertEqual(type(create_email_body(self.good_file)), type("This is a string."))
 
-    # the returned string contains the correct total amount, implying that all of the transaction lines have been summed correctly
+    # the returned string contains the expected total amount, implying that all of the transaction lines have been summed correctly
     body = create_email_body(self.good_file)
     result = body.find("353.7")
     self.assertNotEqual(result, -1)

@@ -43,16 +43,29 @@ def create_email_body(path):
                     'todays_date': str(todays_date)
                   }
     body = '''
-The ACH file has been successfully transmitted the file {file_name} with a \
-total ACH amount of ${summed_lines} to the bank on {todays_date}.
+The ACH file {file_name} with a total ACH amount of ${summed_lines} \
+has been successfully transmitted to the bank on {todays_date}.
 '''.format(**body_format)
     return body
+
+'''
+The ACH file has been successfully transmitted the file {file_name} with a \
+total ACH amount of ${summed_lines} to the bank on {todays_date}.
+'''
 
 
 def get_num_of_commissions(path):
     """
     Parses file data to return total number of commissions as an integer.
     """
+
+    """
+    CHANGE NOTES:
+    Method was returning value as a string, causing validation errors.
+    - Corrected method so that it returns value as integer.
+    - Implemented regression test to ensure method outputs value as integer.
+    """
+
     with path.open() as f:
         commission_lines = list(f)
     # 18:21 on the final line contains the number of commissions

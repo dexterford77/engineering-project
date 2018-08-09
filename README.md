@@ -35,15 +35,21 @@ and add logging statements such that the logs indicate what the program is doing
 what caused an error (corrupt or not-validated input file, network errors, etc). Try and find the balance
 between detailed debug information and excessively noisy output. 
 Also implement unittests for `create_email_body` and `get_num_of_commissions` methods. These can be fairly
-simple tests, but be sure to include a regression test from the second task above so this issue won't happen again. 
+simple tests, but be sure to include a regression test handling your bug finding from the first task. 
 For this task, we are looking at the quality of test cases you write, not quantity. About two cases per method 
 will be sufficient. 
  
 1. Currently this process runs on an AWS EC2 instance. As a new developer, you heard about this cool, new 
 service AWS is offering called ['Lambda'](https://aws.amazon.com/lambda/). Rewrite `app.py` as 
 a Lambda Function that gets a file off of S3 and processes it on demand 
-([S3 Trigger](https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html)). In doing this you will need to 
-implement a method to download the file (listed in the S3 Event Trigger) to local storage and process it. 
+([S3 Trigger](https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html)). In this task, you are migrating 
+the process from a server-based process to a fully server-less project. Consider the use case: Our Payment Vendor
+will upload the file (example `good_file.txt`) to an S3 Bucket. When the file is written, the S3 PUT event will 
+trigger your lambda function to process the file. The outputted email body can continue to just be printed or
+sent off to logs. There is no need to implement or create any email delivery methods.  
+Being a serverless process, it will run on demand, all on its own (without added human intervention) and can run 
+completely within the Lambda Environment (no other servers or computers needed). 
+>Please your your own AWS account for this task. This can be completed fully within the Free Tier for S3 and Lambda.
 
 1. Lambda functions are great, but infrastructure as code and repeatable deployments are better. Create 
 a repeatable deployment method for your newly created Lambda Function. For this exercise, you do not need
