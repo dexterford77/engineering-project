@@ -15,7 +15,7 @@
     {
       "name": "handler-s3event",
       "lambda_arn": "arn:aws:lambda:us-west-2:237583501221:function:chalice_email_processing-dev-handler",
-      "bucket": "placeholder",
+      "bucket": "bucket_value_to_be_replaced",
       "resource_type": "s3_event"
     }
   ],
