@@ -5,5 +5,5 @@
     }
   },
   "version": "2.0",
-  "app_name": "chalice_test_proper"
+  "app_name": "chalice_email_processing"
 }
