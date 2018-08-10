@@ -65,6 +65,10 @@ def get_num_of_commissions(file_contents):
     # 18:21 on the final line contains the number of commissions
     num_of_commissions = commission_lines[-1][18:21]
     log.debug('Number of commissions: %s', num_of_commissions)
-    num_of_commissions = int(num_of_commissions)
+    try:
+      num_of_commissions = int(num_of_commissions)
+    except ValueError:
+      log.error('Commission data is corrupted; unable to convert data to integer.')
+      raise ValueError
     return num_of_commissions
 
