@@ -3,9 +3,10 @@
 ## How to Set Up
 
 1. Download this app to your local system & navigate to the app's directory.
-1. Download & configure [Chalice](https://github.com/aws/chalice).
-1. Create a bucket in your AWS S3.
-1. Edit the value of `bucket_name` in `app.py` so that it equals the name of your bucket. You can do this by running `sed -i 's/bucket_value_to_be_replaced/WRITE_YOUR_BUCKET_NAME_HERE/g' app.py` or by editing `app.py` manually.
+1. Install requirements (ie, [Chalice](https://github.com/aws/chalice)) using [pip](https://pypi.org/project/pip/).
+1. Make sure your AWS CLI credentials are properly configured.
+1. Create a new bucket in your AWS S3.
+1. Edit the value of `bucket_name` in `app.py` so that it equals the name of your new bucket. You can do this by running `sed -i 's/bucket_value_to_be_replaced/WRITE_YOUR_BUCKET_NAME_HERE/g' app.py` or by editing `app.py` manually.
 
 ## How to Run
 
