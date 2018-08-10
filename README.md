@@ -16,4 +16,4 @@
 
 ## How to Run Tests
 
-1. Run `python tests/utils.py` in you CLI.
+1. Run `python tests/utils.py` in your CLI.
