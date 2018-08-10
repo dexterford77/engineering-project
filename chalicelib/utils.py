@@ -3,7 +3,7 @@ from decimal import Decimal
 import logging
 
 ASSUMED_NUMBER_OF_COMMISSIONS = 3
-log = logging.getLogger(__name__)
+log = logging.getLogger()
 
 
 

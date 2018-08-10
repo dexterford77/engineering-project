@@ -3,11 +3,11 @@ import boto3
 import logging
 from chalicelib.utils import create_email_body, get_num_of_commissions, validate_commissions
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-log = logging.getLogger(__name__)
-bucket_name = 'bucket_value_to_be_replaced'
+log = logging.getLogger()
+log.setLevel(logging.DEBUG)
 
-app = Chalice(app_name='chalice_test_proper')
+bucket_name = 'bucket_value_to_be_replaced'
+app = Chalice(app_name='chalice_email_processing')
 
 @app.on_s3_event(bucket=bucket_name)
 def handler(event):

@@ -11,7 +11,7 @@
 ## How to Run
 
 1. Run `chalice deploy` in your CLI (this will create your Lambda function upstream).
-1. Upload a file to your AWS S3 bucket.
+1. Upload a file to your AWS S3 bucket (recommended: start with `good_file.txt` from the `examples` directory).
 1. Check the logs of your newly-created Lambda function for the generated e-mail. You can reach these logs by navigating to your Lambda function in the AWS console, selecting the "Monitoring" tab, and selecting "View Logs in CloudWatch." Select the most recent Log Stream to view the logs as well as the text of the generated e-mail.
 
 ## How to Run Tests
