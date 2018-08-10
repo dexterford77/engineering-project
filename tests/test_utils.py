@@ -1,6 +1,8 @@
 from pathlib import Path
 import unittest
-from utils import create_email_body, get_num_of_commissions
+import sys  
+sys.path.append('./')  
+from chalicelib.utils import create_email_body, get_num_of_commissions
 
 
 class TestUtils(unittest.TestCase):
@@ -8,8 +10,8 @@ class TestUtils(unittest.TestCase):
 
 
   def setUp(self):
-    self.good_file = Path("examples/good_file.txt")
-    self.corrupt_file = Path("examples/corrupt.txt")
+    self.good_file = Path("examples/good_file.txt").open().read()
+    self.corrupt_file = Path("examples/corrupt.txt").open().read()
 
 
   def test_get_num_of_commissions(self):
@@ -25,10 +27,10 @@ class TestUtils(unittest.TestCase):
   def test_create_email_body(self):
 
     # it returns a string
-    self.assertEqual(type(create_email_body(self.good_file)), type("This is a string."))
+    self.assertEqual(type(create_email_body(self.good_file.splitlines(), "file.txt")), type("This is a string."))
 
     # the returned string contains the expected total amount, implying that all of the transaction lines have been summed correctly
-    body = create_email_body(self.good_file)
+    body = create_email_body(self.good_file.splitlines(), "file.txt")
     result = body.find("353.7")
     self.assertNotEqual(result, -1)
 
