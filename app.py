@@ -1,6 +1,5 @@
 from chalice import Chalice
 import boto3
-import click
 import logging
 from chalicelib.utils import create_email_body, get_num_of_commissions, validate_commissions
 

@@ -1,0 +1,23 @@
+{
+  "schema_version": "2.0",
+  "resources": [
+    {
+      "role_name": "chalice_test_proper-dev",
+      "role_arn": "arn:aws:iam::237583501221:role/chalice_test_proper-dev",
+      "name": "default-role",
+      "resource_type": "iam_role"
+    },
+    {
+      "lambda_arn": "arn:aws:lambda:us-west-2:237583501221:function:chalice_test_proper-dev-handler",
+      "name": "handler",
+      "resource_type": "lambda_function"
+    },
+    {
+      "name": "handler-s3event",
+      "lambda_arn": "arn:aws:lambda:us-west-2:237583501221:function:chalice_test_proper-dev-handler",
+      "bucket": "captain-beefheart-did-nothing-wrong2",
+      "resource_type": "s3_event"
+    }
+  ],
+  "backend": "api"
+}
