@@ -6,7 +6,8 @@
 1. Install requirements (ie, [Chalice](https://github.com/aws/chalice)) using [pip](https://pypi.org/project/pip/).
 1. Make sure your [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) credentials are properly configured.
 1. Create a new bucket in your AWS S3.
-1. Edit the value of `bucket_name` in `app.py` so that it equals the name of your new bucket. You can do this by running `sed -i 's/bucket_value_to_be_replaced/WRITE_YOUR_BUCKET_NAME_HERE/g' app.py .chalice/deployed/dev.json` or by editing `app.py` and `.chalice/deployed/dev.json` manually.
+1. Run `sed -i 's/bucket_value_to_be_replaced/WRITE_YOUR_BUCKET_NAME_HERE/g' app.py .chalice/deployed/dev.json`, replacing the ALL_CAP portion with your bucket name.
+1. Run `sed -i 's/237583501221/WRITE_YOUR_ACCOUNT_NUMBER_HERE/g' .chalice/deployed/dev.json`, replacing the ALL_CAPS portion with your AWS Account # (no hypens).
 
 ## How to Run
 
