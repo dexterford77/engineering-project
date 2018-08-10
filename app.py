@@ -4,7 +4,7 @@ import logging
 from chalicelib.utils import create_email_body, get_num_of_commissions, validate_commissions
 
 log = logging.getLogger()
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 
 bucket_name = 'bucket_value_to_be_replaced'
 app = Chalice(app_name='chalice_email_processing')
